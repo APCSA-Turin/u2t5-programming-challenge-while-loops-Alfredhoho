@@ -29,9 +29,21 @@ public class WhileLoops {
     * countEvensUpTo(6) -> 3 // {2, 4, 6}
     * countEvensUpTo(10) -> 5 // {2, 4, 6, 8, 10}
     */
+
    public static int countEvensUpTo(int n) {
        // YOUR CODE HERE
-       return -1;
+       if (n < 1) {
+        return 0;
+       } 
+       
+       int currentNum = 1;
+       while (currentNum <= n) {
+        if (currentNum % 2 == 0) {
+            return n / 2;
+        }
+        currentNum++;
+       }
+       return 0;
    }
 
 
@@ -48,7 +60,12 @@ public class WhileLoops {
     */
    public static int digitSum(int n) {
        // YOUR CODE HERE
-       return -1;
+       int sum = 0;
+       while (n > 0) {
+        sum += n % 10;
+        n /= 10;
+       }
+       return sum;
    }
 
 
@@ -73,7 +90,14 @@ public class WhileLoops {
     */
    public static int countDownBy(int start, int step) {
        // YOUR CODE HERE
-       return -1;
+       if (step <= 0) {
+        return start;
+       }
+
+        while (start - step >= 0) {
+            start -= step;
+        }
+        return start;
    }
 
 
@@ -106,8 +130,19 @@ public class WhileLoops {
     */
    public static int weeksToReachGoal(int startBalance, int weeklyDeposit, int goalBalance) {
        // CODE HERE
-       return -1;
-   }
+
+         if (startBalance >= goalBalance) {
+          return 0;
+         }
+            int weeks = 0;
+            while (startBalance < goalBalance) {
+                startBalance += weeklyDeposit;
+                weeks++;
+            }
+            return weeks;
+        }
+      
+    
 
 
    /**
@@ -141,7 +176,16 @@ public class WhileLoops {
     */
    public static int minutesUntilDead(int startPercent, int perMinuteUse) {
        //YOUR CODE HERE
-       return -1;
+         if (startPercent <= 0 || perMinuteUse <= 0) {
+          return 0;
+         }
+            int minutes = 0;
+            while (startPercent > 0) {
+                startPercent -= perMinuteUse;
+                minutes++;
+            }
+            return minutes;
+     
    }
 }
 
